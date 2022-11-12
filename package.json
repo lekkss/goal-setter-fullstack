@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "start": "node backend/server.js",
-    "server": "nodemon backend/server.js"
+    "server": "nodemon backend/server.js",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Afolabi O.",
   "license": "MIT",
@@ -20,6 +22,7 @@
   },
   "devDependencies": {
     "@types/express": "^4.17.14",
+    "concurrently": "^7.5.0",
     "nodemon": "^2.0.20"
   }
 }
