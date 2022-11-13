@@ -28,7 +28,7 @@ const Register = () => {
       toast.error(message);
     }
     if (isSuccess || user) {
-      navigate("/dashboard");
+      navigate("/");
     }
     dispatch(reset());
   }, [user, isError, isSuccess, message, navigate, dispatch]);
@@ -49,9 +49,11 @@ const Register = () => {
       dispatch(register(userData));
     }
   };
+  
   if (isLoading) {
     return <Spinner />;
   }
+
   return (
     <>
       <section className="heading">
