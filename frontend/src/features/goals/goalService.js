@@ -4,18 +4,23 @@ const API_URL = "/api/goals/";
 
 // Get goals
 const getGoals = async (token) => {
-  const response = await axios.get(API_URL);
-  return response.data;
-};
-
-// Create Goal
-const createGoal = async (userData, token) => {
   const config = {
     headers: {
       Authorization: `Bearer ${token}`,
     },
   };
-  const response = await axios.post(API_URL, userData, config);
+  const response = await axios.get(API_URL, config);
+  return response.data;
+};
+
+// Create Goal
+const createGoal = async (goalData, token) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  const response = await axios.post(API_URL, goalData, config);
   return response.data;
 };
 
